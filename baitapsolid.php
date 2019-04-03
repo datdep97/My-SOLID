@@ -1,8 +1,18 @@
 <?php
-interface AreaInterface
+class AreaCalculate
 {
+    public function calculate(AreaInterface $shape)
+    {
+        $costPerUnit = 1.5;
+        $totalCost = $costPerUnit * $shape->calculateArea();
+        return $totalCost;
+    }
+}
+
+interface AreaInterface {
     public function calculateArea();
 }
+
 class Rectangle implements AreaInterface
 {
     public $width;
@@ -31,16 +41,7 @@ class Circle implements AreaInterface
         return $area;
     }
 }
-class CostManager
-{
-    public function calculate(AreaInterface $shape)
-    {
-        $costPerUnit = 1.5;
-        $totalCost = $costPerUnit * $shape->calculateArea();
-        return $totalCost;
-    }
-}
-$circle = new Circle(3);
-$obj = new CostManager();
-echo $obj->calculate($circle);
+$circle = new Circle(5);
+$run = new AreaCalculate();
+echo $run -> calculate($circle);
 ?>

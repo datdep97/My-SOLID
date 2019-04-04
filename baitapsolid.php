@@ -41,7 +41,22 @@ class Circle implements AreaInterface
         return $area;
     }
 }
-$rectangle = new Rectangle(5, 2);
+
+/*class Triangular implements AreaInterface
+{
+    public $height;
+    public $base;
+    public function __construct($height, $base)
+    {
+        $this->height = $height;
+        $this->base = $base;
+    }
+    public function calculateArea(){
+        $area = $this->height * $this->base / 2;
+        return $area;
+    }
+}*/
+$triangular = new Triangular(5, 2);
 $run = new AreaCalculate();
-echo $run -> calculate($rectangle);
+echo $run -> calculate($triangular);
 ?>

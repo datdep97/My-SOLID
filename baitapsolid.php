@@ -3,9 +3,9 @@ class AreaCalculate
 {
     public function calculate(AreaInterface $shape)
     {
-        $costPerUnit = 1.5;
-        $totalCost = $costPerUnit * $shape->calculateArea();
-        return $totalCost;
+        $shapenumber = 10;
+        $totalArea = $shapenumber * $shape->calculateArea();
+        return $totalArea;
     }
 }
 
@@ -41,7 +41,7 @@ class Circle implements AreaInterface
         return $area;
     }
 }
-$circle = new Circle(5);
+$rectangle = new Rectangle(5, 2);
 $run = new AreaCalculate();
-echo $run -> calculate($circle);
+echo $run -> calculate($rectangle);
 ?>
